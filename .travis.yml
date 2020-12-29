@@ -1,5 +1,8 @@
 sudo: false
 language: node_js
+arch:
+  - amd64
+  - ppc64le
 node_js:
   - "0.10"
   - "0.12"
@@ -7,3 +10,11 @@ node_js:
   - "6"
   - "8"
   - "10"
+jobs:
+  exclude:
+      - arch: ppc64le
+        node_js:
+          - "0.10"
+      - arch: ppc64le
+        node_js:
+          - "0.12"
